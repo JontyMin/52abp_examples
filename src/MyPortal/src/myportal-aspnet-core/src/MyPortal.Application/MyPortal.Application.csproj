@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\abpversion.props"></Import>
+
+  <PropertyGroup>
+    <VersionPrefix>1.0.0.0</VersionPrefix>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <AssemblyName>MyPortal.Application</AssemblyName>
+    <PackageId>MyPortal.Application</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace>MyPortal</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="L.52ABP.Application" Version="$(L52abpVersion)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyPortal.Core\MyPortal.Core.csproj" />
+  </ItemGroup>
+</Project>
