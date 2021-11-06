@@ -1,7 +1,8 @@
-using Abp.AutoMapper;
+﻿using Abp.AutoMapper;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using MyPortal.Authorization;
+using MyPortal.Students.Mapper;
 
 namespace MyPortal
 {
@@ -13,6 +14,11 @@ namespace MyPortal
         public override void PreInitialize()
         {
             Configuration.Authorization.Providers.Add<MyPortalAuthorizationProvider>();
+
+            Configuration.Modules.AbpAutoMapper().Configurators.Add(configuration =>
+            {
+               StudentDtoAutoMapper.CreateMappings(configuration);
+            });
         }
 
         public override void Initialize()

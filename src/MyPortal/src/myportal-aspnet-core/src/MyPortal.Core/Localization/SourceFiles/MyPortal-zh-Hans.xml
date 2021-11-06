@@ -240,6 +240,7 @@
     <text name="ClickHere" value="点击这里" />
     <text name="Apply" value="应用" />
     <text name="CustomRange" value="自定义范围" />
+    <text name="Students" value="学生列表" />
     
     
   </texts>

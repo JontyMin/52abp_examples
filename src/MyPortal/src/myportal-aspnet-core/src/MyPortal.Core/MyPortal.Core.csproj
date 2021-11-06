@@ -22,4 +22,7 @@
     <PackageReference Include="Castle.Windsor.MsDependencyInjection" Version="3.4.0" />  
      <PackageReference Include="L.52ABP.Core" Version="$(L52abpVersion)" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Students\" />
+  </ItemGroup>
 </Project>
