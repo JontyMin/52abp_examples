@@ -45,7 +45,8 @@
     <PackageReference Include="Abp.Castle.Log4Net" Version="$(AbpVersion)" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\libs\" />
     <Folder Include="wwwroot\view-resources\Views\_Bundles\" />
+    <Folder Include="wwwroot\libs\" />
   </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 </Project>

@@ -1,5 +1,5 @@
 {
-  "defaultProvider": "jsdelivr",
+  "defaultProvider": "cdnjs",
   "version": "1.0",
   "libraries": [
     //core libs start
@@ -196,5 +196,6 @@
       "destination": "wwwroot/libs/push.js"
     }
     //other libs end
+
   ]
 }
