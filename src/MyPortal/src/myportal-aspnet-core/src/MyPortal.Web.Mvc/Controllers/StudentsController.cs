@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Abp.Application.Services.Dto;
 using Microsoft.AspNetCore.Mvc;
 using MyPortal.Controllers;
 using MyPortal.Students;
@@ -15,11 +16,12 @@ namespace MyPortal.Web.Controllers
             _studentAppService = studentAppService;
         }
 
-        public async Task<ActionResult> Index()
+        public ActionResult Index() => View();
+
+        public async Task<ActionResult> EditModal(int studentId)
         {
-            var students = await _studentAppService.GetAllStudents();
-            
-            return View(students);
+            var tenantDto = await _studentAppService.GetAsync(new EntityDto(studentId));
+            return PartialView("_EditModal", tenantDto);
         }
     }
 }

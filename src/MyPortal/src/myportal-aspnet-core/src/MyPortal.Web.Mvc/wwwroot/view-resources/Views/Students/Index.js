@@ -9,7 +9,7 @@
         paging: true,
         serverSide: true,
         ajax: function (data, callback, settings) {
-            var filter = $('#StudentsSearchForm').serializeFormToObject(true);
+            var filter = $('#StudentSearchForm').serializeFormToObject(true);
             filter.maxResultCount = data.length;
             filter.skipCount = data.start;
 
@@ -44,7 +44,7 @@
             },
             {
                 targets: 1,
-                data: 'name',
+                data: 'id',
                 sortable: false
             },
             {

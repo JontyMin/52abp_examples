@@ -1,28 +1,32 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿
+
+using System.Linq;
 using Abp.Application.Services;
 using Abp.Domain.Repositories;
-using Microsoft.EntityFrameworkCore;
+using Abp.Extensions;
+using Abp.Linq.Extensions;
 using MyPortal.Students.Dtos;
 
 namespace MyPortal.Students
 {
-    public class StudentAppService: ApplicationService,IStudentAppService
+    public class StudentAppService : AsyncCrudAppService<Student, StudentDto, int, PagedStudentResultRequestDto, CreateStudentDto, StudentDto>, IStudentAppService
     {
-        private readonly IRepository<Student> _studentRepository;
-        public StudentAppService(IRepository<Student> studentRepository)
+        public StudentAppService(IRepository<Student, int> repository) : base(repository)
         {
-            _studentRepository = studentRepository;
+
         }
 
-        /// <summary>
-        /// 获取全部学生
-        /// </summary>
-        /// <returns></returns>
-        public async Task<List<StudentListDto>> GetAllStudents()
+        protected override IQueryable<Student> CreateFilteredQuery(PagedStudentResultRequestDto input)
         {
-            var students = await _studentRepository.GetAll().ToListAsync();
-            return ObjectMapper.Map<List<StudentListDto>>(students);
+            return Repository.GetAll()
+                .WhereIf(!input.Keyword.IsNullOrWhiteSpace(), x => x.Name.Contains(input.Keyword));
+        }
+
+        protected override void MapToEntity(StudentDto updateInput, Student entity)
+        {
+            entity.Name = updateInput.Name;
+            entity.Address = updateInput.Address;
+            entity.Age = updateInput.Age;
         }
     }
 }

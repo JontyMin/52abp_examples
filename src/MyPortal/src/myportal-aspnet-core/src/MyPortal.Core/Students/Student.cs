@@ -26,7 +26,7 @@ namespace MyPortal.Students
         /// 名称
         /// </summary>
         [Required]
-        [MaxLength(MaxNameLength)]
+        [StringLength(MaxNameLength)]
         public string Name { get; set; }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace MyPortal.Students
         /// <summary>
         /// 地址
         /// </summary>
-        [MaxLength(MaxAddressLength)]
+        [StringLength(MaxAddressLength)]
         public string Address { get; set; }
 
     }

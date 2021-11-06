@@ -8,8 +8,9 @@ namespace MyPortal.Students
     /// <summary>
     /// 学生应用服务接口
     /// </summary>
-    public interface IStudentAppService : IAsyncCrudAppService<TenantDto, int, PagedTenantResultRequestDto, CreateTenantDto, TenantDto>
+    public interface IStudentAppService : IAsyncCrudAppService<StudentDto, int, PagedStudentResultRequestDto,
+        CreateStudentDto, StudentDto>
     {
-     
+
     }
 }

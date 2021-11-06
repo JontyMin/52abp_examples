@@ -18,8 +18,4 @@
   <ItemGroup>
     <ProjectReference Include="..\MyPortal.Core\MyPortal.Core.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Students\Mapper\" />
-    <Folder Include="Students\Dtos\" />
-  </ItemGroup>
 </Project>
