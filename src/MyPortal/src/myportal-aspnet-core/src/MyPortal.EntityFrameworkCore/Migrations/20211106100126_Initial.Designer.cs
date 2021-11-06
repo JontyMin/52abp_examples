@@ -10,7 +10,7 @@ using MyPortal.EntityFrameworkCore;
 namespace MyPortal.Migrations
 {
     [DbContext(typeof(MyPortalDbContext))]
-    [Migration("20211106090648_Initial")]
+    [Migration("20211106100126_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1594,33 +1594,6 @@ namespace MyPortal.Migrations
                     b.HasIndex("TenancyName");
 
                     b.ToTable("AbpTenants");
-                });
-
-            modelBuilder.Entity("MyPortal.Tasks.Task", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasMaxLength(65536)
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte>("State")
-                        .HasColumnType("tinyint");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Abp_Tasks");
                 });
 
             modelBuilder.Entity("Abp.Application.Features.EditionFeatureSetting", b =>
