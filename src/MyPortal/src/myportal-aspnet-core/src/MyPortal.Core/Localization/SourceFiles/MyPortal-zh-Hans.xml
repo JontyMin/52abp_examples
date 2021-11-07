@@ -243,7 +243,8 @@
     <text name="Students" value="学生列表" />
     <text name="Address" value="地址" />
     <text name="Age" value="年龄" />
-    <text name="EditStudent" value="修改学生" />
+    <text name="EditStudent" value="编辑学生" />
+    <text name="CreateNewStudent" value="添加学生" />
     
     
   </texts>

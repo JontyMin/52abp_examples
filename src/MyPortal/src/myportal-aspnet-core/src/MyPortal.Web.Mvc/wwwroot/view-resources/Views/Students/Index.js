@@ -44,7 +44,7 @@
             },
             {
                 targets: 1,
-                data: 'id',
+                data: 'name',
                 sortable: false
             },
             {

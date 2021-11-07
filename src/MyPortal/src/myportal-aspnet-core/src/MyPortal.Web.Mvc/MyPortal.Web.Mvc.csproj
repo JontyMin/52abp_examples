@@ -45,6 +45,7 @@
     <PackageReference Include="Abp.Castle.Log4Net" Version="$(AbpVersion)" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Models\Students\" />
     <Folder Include="wwwroot\view-resources\Views\_Bundles\" />
     <Folder Include="wwwroot\libs\" />
   </ItemGroup>
