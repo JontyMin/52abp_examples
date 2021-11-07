@@ -22,11 +22,5 @@ namespace MyPortal.Students
                 .WhereIf(!input.Keyword.IsNullOrWhiteSpace(), x => x.Name.Contains(input.Keyword));
         }
 
-        protected override void MapToEntity(StudentDto updateInput, Student entity)
-        {
-            entity.Name = updateInput.Name;
-            entity.Address = updateInput.Address;
-            entity.Age = updateInput.Age;
-        }
     }
 }

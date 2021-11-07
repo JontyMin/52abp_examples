@@ -25,6 +25,5 @@ namespace MyPortal.Students.Dtos
         [StringLength(Student.MaxAddressLength)]
         public string Address { get; set; }
 
-
     }
 }
