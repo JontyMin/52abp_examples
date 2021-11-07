@@ -4,7 +4,7 @@ using Abp.AutoMapper;
 
 namespace MyPortal.Students.Dtos
 {
-    [AutoMapFrom(typeof(Student))]
+    [AutoMap(typeof(Student))]
     public class StudentDto:EntityDto
     { 
         /// <summary>

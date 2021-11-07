@@ -126,11 +126,11 @@
         _$studentsTable.ajax.reload();
     });
 
-    function deleteStudent(studentId, tenancyName) {
+    function deleteStudent(studentId, studentName) {
         abp.message.confirm(
             abp.utils.formatString(
                 l('AreYouSureWantToDelete'),
-                tenancyName
+                studentName
             ),
             null,
             (isConfirmed) => {

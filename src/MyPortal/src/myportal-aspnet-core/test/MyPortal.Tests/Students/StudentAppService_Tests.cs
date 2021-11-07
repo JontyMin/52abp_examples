@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using MyPortal.Students;
+using MyPortal.Students.Dtos;
 using Shouldly;
 using Xunit;
 
@@ -18,9 +19,9 @@ namespace MyPortal.Tests.Students
         [Fact]
         public async Task Should_Get_All_Students()
         {
-            var output = await _studentAppService.GetAllStudents();
+            var output = await _studentAppService.GetAllAsync(new PagedStudentResultRequestDto());
 
-            output.Count.ShouldBe(2);
+            output.Items.Count.ShouldBe(1);
         }
     }
 }
